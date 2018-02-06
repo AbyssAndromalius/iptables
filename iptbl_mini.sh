@@ -61,3 +61,7 @@ iptables -A OUTPUT -j DROP
 # Allow incoming ping 
 #iptables -A INPUT -p icmp --icmp-type 8 -s 0/0 -d $SERVER_IP -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 #iptables -A OUTPUT -p icmp --icmp-type 0 -s $SERVER_IP -d 0/0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+#Debian Persistant rules upon reboot
+#apt-get install iptables-persistent
+#pour sauvegarder : iptables-save > /etc/iptables/rules.v4
